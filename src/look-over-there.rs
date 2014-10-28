@@ -1,7 +1,16 @@
-
+use std::io;
 
 fn main() {
-  println!("{}", look_over_there::choose_direction());
+    let input = io::stdin().read_line()
+                       .ok()
+                       .expect("Failed to read line");
+    let direction = look_over_there::choose_direction();
+    println!("Got input: {}", input);
+    if input.as_slice().trim().to_string() == direction.to_string() {
+        println!("Gotcha!");
+    } else {
+        println!("OK, you win!");
+    }
 }
 
 mod look_over_there {
