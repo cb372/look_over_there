@@ -28,7 +28,15 @@ mod look_over_there {
 
     impl rand::Rand for Direction {
         fn rand<R: rand::Rng>(rng: &mut R) -> Direction {
-            Up
+            let values = [Up, Down, Left, Right];
+            let choice = rng.choose(values);
+            match choice {
+                Some(dir) => *dir,
+                _ => {
+                    println!("WTF");
+                    Up
+                }
+            }
         }
     }
 
