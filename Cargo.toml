@@ -1,0 +1,9 @@
+[package]
+
+name = "look-over-there"
+version = "0.0.1"
+authors = [ "Chris Birchall <c-birchall@m3.com>" ]
+
+[[bin]]
+
+name = "look-over-there"
